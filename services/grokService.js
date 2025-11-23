@@ -18,7 +18,7 @@ export async function getChatResponse(message, conversationHistory = []) {
         const messages = [
             {
                 role: 'system',
-                content: `You are Jarvis, an intelligent AI assistant. You are helpful, friendly, and professional. 
+                content: `You are Phuntroo, an intelligent AI assistant. You are helpful, friendly, and professional. 
         You are speaking to ${process.env.USERNAME || 'the user'}. Keep responses concise but informative.
         You have a realistic 3D avatar that displays emotions and gestures while speaking.`
             },
