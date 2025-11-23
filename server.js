@@ -35,6 +35,7 @@ app.use('/audio', express.static('audio'));
 
 // Routes
 app.use('/api/ai', aiRoutes);
+app.use('/api', aiRoutes); // Compatibility for /api/chat
 app.use('/api/voice', voiceRoutes);
 
 // Health check

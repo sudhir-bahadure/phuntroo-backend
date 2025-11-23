@@ -29,9 +29,10 @@ export async function getChatResponse(message, conversationHistory = []) {
             }
         ];
 
+        console.log('Sending to Grok:', JSON.stringify(messages, null, 2));
         const completion = await groq.chat.completions.create({
             messages: messages,
-            model: 'mixtral-8x7b-32768', // Using Mixtral model for better responses
+            model: 'llama-3.1-8b-instant', // Using Llama 3.1 for better responses
             temperature: 0.7,
             max_tokens: 1024,
             top_p: 1,
@@ -41,7 +42,8 @@ export async function getChatResponse(message, conversationHistory = []) {
         return completion.choices[0]?.message?.content || 'I apologize, but I could not generate a response.';
     } catch (error) {
         console.error('Grok API Error:', error);
-        throw new Error(`Failed to get AI response: ${error.message}`);
+        // Fallback response so the server doesn't crash
+        return "I'm having trouble connecting to my brain right now. Please check my API configuration.";
     }
 }
 
@@ -68,7 +70,7 @@ export async function analyzeIntent(query) {
                     content: query
                 }
             ],
-            model: 'mixtral-8x7b-32768',
+            model: 'llama-3.1-8b-instant',
             temperature: 0.3,
             response_format: { type: 'json_object' }
         });

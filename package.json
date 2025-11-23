@@ -8,19 +8,24 @@
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
-  "keywords": ["ai", "assistant", "avatar", "3d"],
+  "keywords": [
+    "ai",
+    "assistant",
+    "avatar",
+    "3d"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
+    "@google-cloud/text-to-speech": "^5.0.1",
+    "axios": "^1.6.2",
+    "cohere-ai": "^7.19.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
-    "axios": "^1.6.2",
-    "socket.io": "^4.6.1",
+    "express": "^4.18.2",
+    "groq-sdk": "^0.36.0",
     "multer": "^1.4.5-lts.1",
-    "@google-cloud/text-to-speech": "^5.0.1",
-    "cohere-ai": "^7.7.0",
-    "groq-sdk": "^0.3.0"
+    "socket.io": "^4.6.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
